@@ -26,5 +26,15 @@ class Bibliotheque
         return null;
     }
 
+    public function tous(): array
+    {
+        return $this->livres;
+    }
+
+    public function compter(): int
+    {
+        return count($this->livres);
+    }
+
    
 }
