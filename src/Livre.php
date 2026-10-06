@@ -58,4 +58,13 @@ public function rendre(): void
 
     $this->disponible = true;
 }
+public function __toString(): string
+{
+    $etat = $this->disponible ? "disponible" : "indisponible";
+
+    return $this->titre . " - " .
+           $this->auteur . " (" .
+           $this->isbn . ") - " .
+           $etat;
+}
 }
