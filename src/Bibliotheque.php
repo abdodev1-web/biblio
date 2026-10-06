@@ -26,29 +26,5 @@ class Bibliotheque
         return null;
     }
 
-    public function tous(): array
-    {
-        return $this->livres;
-    }
-
-    public function compter(): int
-    {
-        return count($this->livres);
-    }
-
-    public function rechercher(string $mot): array
-    {
-        $resultats = [];
-
-        foreach ($this->livres as $livre) {
-            if (
-                stripos($livre->getTitre(), $mot) !== false ||
-                stripos($livre->getAuteur(), $mot) !== false
-            ) {
-                $resultats[] = $livre;
-            }
-        }
-
-        return $resultats;
-    }
+   
 }
