@@ -40,4 +40,25 @@ class Membre
         $this->emprunts[] = $l;
     }
     
+    public function rendre(Livre $l): void
+    {
+        $index = null;
+
+        foreach ($this->emprunts as $i => $livre) {
+            if ($livre === $l) {
+                $index = $i;
+                break;
+            }
+        }
+
+        if ($index === null) {
+            throw new Exception(
+                "Ce livre n'est pas emprunté par ce membre."
+            );
+        }
+
+        $l->rendre();
+
+        array_splice($this->emprunts, $index, 1);
+    }
 }
