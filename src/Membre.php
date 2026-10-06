@@ -26,4 +26,17 @@ class Membre
     {
         return $this->emprunts;
     }
+    
+    public function emprunter(Livre $l): void
+    {
+        if (count($this->emprunts) >= 3) {
+            throw new Exception(
+                "Un membre ne peut pas emprunter plus de trois livres."
+            );
+        }
+
+        $l->emprunter();
+
+        $this->emprunts[] = $l;
+    }
 }
