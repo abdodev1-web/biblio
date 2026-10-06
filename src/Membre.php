@@ -11,4 +11,19 @@ class Membre
         $this->id = $id;
         $this->nom = $nom;
     }
+
+     public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function getNom(): string
+    {
+        return $this->nom;
+    }
+
+    public function getEmprunts(): array
+    {
+        return $this->emprunts;
+    }
 }
