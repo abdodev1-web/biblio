@@ -36,5 +36,19 @@ class Bibliotheque
         return count($this->livres);
     }
 
-   
+    public function rechercher(string $mot): array
+    {
+        $resultats = [];
+
+        foreach ($this->livres as $livre) {
+            if (
+                stripos($livre->getTitre(), $mot) !== false ||
+                stripos($livre->getAuteur(), $mot) !== false
+            ) {
+                $resultats[] = $livre;
+            }
+        }
+
+        return $resultats;
+    }
 }
