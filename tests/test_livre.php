@@ -76,3 +76,8 @@ verifier(
     $exception,
     'Un ISBN invalide provoque une exception'
 );
+
+verifier(
+    strpos((string) $livre, 'Introduction') !== false,
+    '__toString contient le titre du livre'
+);
